@@ -13,7 +13,7 @@ const picture = [
 
 let counter = 0;
 
-
+info.textContent=`Picture number: ${counter+1} / ${picture.length}`
 
 leftSide = ()=>{
 
@@ -22,6 +22,7 @@ leftSide = ()=>{
         left.style.opacity = 1;
         right.style.opacity = 1;
         divImg.style.backgroundImage = `url(${picture[counter].img})`
+        info.textContent = `Picture number: ${counter+1} / ${picture.length}`
     
 }else if(counter===0){
     
@@ -36,15 +37,16 @@ rightSide = ()=>{
         counter++;
         left.style.opacity = 1;
         right.style.opacity = 1;
-        divImg.style.backgroundImage = `url(${picture[counter].img})`    
+        divImg.style.backgroundImage = `url(${picture[counter].img})`;
+        info.textContent = `Picture number: ${counter+1} / ${picture.length}`    
     
  }else if (counter===picture.length-1){
  right.style.opacity = .5;
  counter=picture.length-1
  }
 
-
 }
+
 
 
 left.addEventListener('click', leftSide)
